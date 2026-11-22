@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8d0da">
+<title>Happy 5th Birthday, Roufiqul Prime ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS (edit warna di sini) ============ */
+:root{
+  --pink:#f8d0da; --pink2:#f1b0c3; --cream:#fff4ec; --rose:#b9707a; --gold:#e0b09a;
+  --ink:#7b4b57; --ease:cubic-bezier(.2,.7,.2,1);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#f1c3cf}
+body{display:grid;place-items:center;font-family:var(--sans);color:var(--ink)}
+
+/* ============ STAGE 9:16 ============ */
+.stage{position:relative;container-type:size;overflow:hidden;
+  width:min(100vw,calc(100dvh*9/16));height:min(100dvh,calc(100vw*16/9));
+  background:radial-gradient(120% 80% at 50% 0%,#fff1ee 0%,var(--pink) 55%,var(--pink2) 100%)}
+@media (max-aspect-ratio:9/16){.stage{width:100vw;height:100dvh}}
+.bg2{position:absolute;inset:0;opacity:0;transition:opacity 2.4s ease;
+  background:radial-gradient(90% 60% at 50% 42%,#fff2f8 0%,#f3c9e0 55%,#dcaed4 100%)}
+.stage.dreamy .bg2{opacity:1}
+.twinkles,.fx{position:absolute;inset:0;pointer-events:none}
+.twinkles{transition:transform .8s ease-out}
+.tw{position:absolute;width:1cqw;height:1cqw;border-radius:50%;background:#fff;opacity:0;animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{50%{opacity:.9;transform:scale(1.7)}}
+
+/* particles (transform + opacity only) */
+.p{position:absolute;left:var(--x);bottom:-6cqh;font-size:var(--s);color:var(--c);opacity:0;line-height:1;will-change:transform,opacity;animation:float var(--t) linear forwards}
+.p.fall{bottom:auto;top:-6cqh;animation-name:fall}
+.p.conf{width:var(--w);height:calc(var(--w)*.5);background:var(--c);border-radius:1px}
+@keyframes float{0%{opacity:0;transform:translate3d(0,0,0) rotate(0)}12%{opacity:.85}100%{opacity:0;transform:translate3d(var(--dx),-112cqh,0) rotate(var(--r))}}
+@keyframes fall{0%{opacity:0;transform:translate3d(0,0,0) rotate(0)}10%{opacity:.9}100%{opacity:0;transform:translate3d(var(--dx),112cqh,0) rotate(var(--r))}}
+
+/* ============ SCENES ============ */
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:16cqw 8cqw 22cqw;opacity:0;visibility:hidden;transform:scale(1.06);filter:blur(10px);
+  transition:opacity .9s ease,transform .9s ease,filter .9s ease,visibility 0s .9s}
+.scene.active{opacity:1;visibility:visible;transform:none;filter:none;transition-delay:0s}
+/* staggered reveal */
+.r{opacity:0;transform:var(--t,translateY(3cqh));filter:blur(6px);
+  transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
+.active .r{opacity:1;transform:none;filter:none;transition-delay:calc(var(--i,0)*.4s + .5s)}
+
+.kicker{font-size:2.8cqw;letter-spacing:.32em;text-transform:uppercase;color:var(--rose);margin-bottom:3cqw}
+.script{font-family:var(--serif);font-style:italic;font-weight:500;font-size:12cqw;line-height:1.05;color:var(--ink)}
+.sub{font-family:var(--serif);font-size:5.4cqw;margin-top:3cqw;letter-spacing:.02em}
+
+/* Scene 1 */
+.orb{font-size:9cqw;color:var(--gold);animation:bob 4s ease-in-out infinite;margin-bottom:4cqw}
+.slot{display:grid;margin-top:12cqw;width:72cqw}
+.slot>*{grid-area:1/1}
+.load{transition:opacity .6s}
+.active .load.done{opacity:0;pointer-events:none;transition-delay:0s}
+.bar{height:1.2cqw;border-radius:9px;background:rgba(255,255,255,.65);overflow:hidden}
+.bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#f0b4c2,#d99a92);transform-origin:left;transform:scaleX(0)}
+.load p{font-size:3.4cqw;margin-top:4cqw;letter-spacing:.06em}
+.load small{display:block;font-size:2.8cqw;margin-top:2cqw;color:var(--rose)}
+.btn{position:relative;align-self:center;justify-self:center;font:500 3.3cqw var(--sans);letter-spacing:.16em;color:#fff;border:0;border-radius:99px;
+  padding:4.4cqw 8cqw;background:linear-gradient(135deg,#d58496,#bd7776);box-shadow:0 2cqw 6cqw rgba(185,112,122,.4);cursor:pointer;
+  transition:opacity .8s,transform .3s}
+.btn:active{transform:scale(.96)}
+.btn::after{content:"";position:absolute;inset:0;border-radius:99px;border:1px solid #d58496;animation:ring 2.6s ease-out infinite}
+@keyframes ring{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(1.18,1.5)}}
+#startBtn{opacity:0;pointer-events:none;transform:translateY(2cqh)}
+#startBtn.show{opacity:1;pointer-events:auto;transform:none}
+
+/* Scene 2 */
+.frame{position:relative;--t:scale(.84);background:var(--cream);border:1.6cqw solid var(--cream);border-radius:7cqw;
+  box-shadow:0 4cqw 9cqw rgba(185,112,122,.35),0 0 9cqw rgba(255,255,255,.85)}
+.frame img{display:block;width:70cqw;max-height:48cqh;object-fit:contain;border-radius:5.4cqw}
+.ph{display:none;width:70cqw;aspect-ratio:1;border-radius:5.4cqw;place-items:center;font-size:20cqw;color:var(--gold);background:linear-gradient(135deg,#fde4ea,#f6c3cf)}
+.nophoto img{display:none}.nophoto .ph{display:grid}
+.fl{position:absolute;font-size:7cqw;color:var(--pink2);animation:spin 14s linear infinite}
+.fl.a{top:-4cqw;left:-4cqw}.fl.b{bottom:-4cqw;right:-3cqw;font-size:8.5cqw;color:var(--gold);animation-direction:reverse}
+.float{animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translate3d(0,-1.6cqw,0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.s2t{margin-top:8cqw}
+
+/* Scene 3 */
+.happy{font-size:4.4cqw;letter-spacing:.7em;margin-right:-.7em;color:var(--rose);font-weight:400}
+.big{position:relative;font-family:var(--serif);font-weight:600;font-size:46cqw;line-height:.95;margin:1cqw 0;
+  background:linear-gradient(160deg,#f3b5c1 10%,#d99a8e 55%,#f0cbb5 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2cqw 4cqw rgba(185,112,122,.25))}
+.big sup{font-size:11cqw;vertical-align:top;position:relative;top:6cqw;margin-left:1cqw}
+.halo{position:absolute;left:50%;top:44%;width:80cqw;height:80cqw;margin:-40cqw 0 0 -40cqw;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,255,255,.8),rgba(255,255,255,0) 65%);animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.15);opacity:.7}}
+.bday{font-size:6cqw;letter-spacing:.5em;margin-right:-.5em;font-weight:500}
+.rule{display:block;width:16cqw;height:1px;background:var(--gold);margin:6cqw auto 5cqw}
+.name{font-family:var(--serif);font-weight:600;font-size:9cqw;line-height:1.2;letter-spacing:.22em;margin-right:-.22em;color:var(--rose)}
+
+/* Scene 4 / 5 */
+.msg{font-family:var(--serif);font-size:5.3cqw;line-height:1.45;margin-top:4.2cqw;max-width:80cqw}
+.msg b{font-weight:600;font-style:italic;color:var(--rose)}
+.pre{display:flex;flex-direction:column;align-items:center;transition:opacity 1s,transform 1s}
+.pre.gone{opacity:0;transform:scale(.94);pointer-events:none;position:absolute}
+.pre .btn{margin-top:10cqw}
+.secret{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18cqw 9cqw 22cqw;
+  opacity:0;pointer-events:none;transition:opacity 1.6s ease}
+.secret.show{opacity:1;pointer-events:auto}
+#typed p{font-family:var(--serif);font-size:5.4cqw;line-height:1.45;margin-bottom:4.5cqw;max-width:80cqw;text-wrap:pretty}
+#typed p.cur::after{content:"";display:inline-block;width:.35cqw;height:1em;background:var(--rose);margin-left:.6cqw;vertical-align:-.12em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+#replay{margin-top:3cqw;opacity:0;pointer-events:none;transition:opacity 1s}
+#replay.show{opacity:1;pointer-events:auto}
+
+/* ============ NAV / HUD ============ */
+.top,.bot{position:absolute;left:5cqw;right:5cqw;display:flex;align-items:center;justify-content:space-between;z-index:5;
+  opacity:0;pointer-events:none;transition:opacity 1s}
+.top{top:calc(env(safe-area-inset-top,0px) + 4cqw)}
+.bot{bottom:calc(env(safe-area-inset-bottom,0px) + 5cqw)}
+.started .top,.started .bot{opacity:1;pointer-events:auto}
+.ico{width:11cqw;height:11cqw;border-radius:50%;border:0;background:rgba(255,255,255,.6);color:var(--ink);font-size:4.6cqw;cursor:pointer;
+  box-shadow:0 1cqw 3cqw rgba(185,112,122,.2);transition:opacity .4s,transform .2s}
+.ico:active{transform:scale(.92)}
+.ico:disabled{opacity:.3;pointer-events:none}
+.dots{display:flex;gap:2.4cqw}
+.dots span{width:2cqw;height:2cqw;border-radius:50%;background:rgba(123,75,87,.25);transition:transform .6s,background .6s}
+.dots span.on{background:var(--rose);transform:scale(1.5)}
+button:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.p,.tw,.orb,.float,.fl,.halo{animation-duration:30s}}
+</style>
+</head>
+<body>
+<main class="stage" id="stage">
+  <div class="bg2"></div>
+  <div class="twinkles" id="tw"></div>
+  <div class="fx" id="fx"></div>
+
+  <!-- HUD -->
+  <div class="top">
+    <button class="ico" id="restartTop" aria-label="Ulangi dari awal">↺</button>
+    <div class="dots" id="dots"><span></span><span></span><span></span><span></span><span></span></div>
+    <button class="ico" id="mute" aria-label="Mute / unmute musik">🔊</button>
+  </div>
+  <div class="bot">
+    <button class="ico" id="back" aria-label="Sebelumnya">‹</button>
+    <button class="ico" id="next" aria-label="Berikutnya">›</button>
+  </div>
+
+  <!-- SCENE 1 — THE BEGINNING -->
+  <section class="scene" data-s="0">
+    <div class="r orb" style="--i:0">✦</div>
+    <p class="r kicker" style="--i:1">a little surprise</p>
+    <h1 class="r script" style="--i:2">for you</h1>
+    <div class="r slot" style="--i:3">
+      <div class="load" id="load">
+        <div class="bar"><i id="barFill"></i></div>
+        <p>Preparing something special for you...</p>
+        <small id="pct">0%</small>
+      </div>
+      <button class="btn" id="startBtn">OPEN YOUR SURPRISE ♡</button>
+    </div>
+  </section>
+
+  <!-- SCENE 2 — THE BIRTHDAY GIRL -->
+  <section class="scene" data-s="1">
+    <div class="r frame" id="frame" style="--i:0">
+      <div class="float">
+        <img id="photo" alt="Foto Roufiqul Prime" decoding="async">
+        <div class="ph">♡</div>
+      </div>
+      <span class="fl a">✿</span><span class="fl b">✿</span>
+    </div>
+    <h2 class="r script s2t" style="--i:3">Hey, Birthday Star!</h2>
+    <p class="r sub" style="--i:4">Today is all about you.</p>
+  </section>
+
+  <!-- SCENE 3 — THE SPECIAL DAY -->
+  <section class="scene" data-s="2">
+    <div class="halo"></div>
+    <p class="r kicker" style="--i:0">today is the day</p>
+    <p class="r happy" style="--i:1">HAPPY</p>
+    <div class="r big" style="--i:2;--t:scale(.8)"><span id="num">0</span><sup>TH</sup></div>
+    <p class="r bday" style="--i:3">BIRTHDAY</p>
+    <i class="r rule" style="--i:4"></i>
+    <h2 class="r name" style="--i:5">ROUFIQUL<br>PRIME</h2>
+  </section>
+
+  <!-- SCENE 4 — A LITTLE WISH FOR YOU  (edit pesan di bawah) -->
+  <section class="scene" data-s="3">
+    <p class="r kicker" style="--i:0">a little wish for you</p>
+    <h2 class="r script" style="--i:1">Dear Roufiqul Prime,</h2>
+    <p class="r msg" style="--i:2">Lima tahun. Sudah sebesar ini, dan <b>look how far you’ve come</b> — dengan tawa yang bikin hari terasa lebih terang.</p>
+    <p class="r msg" style="--i:3">Semoga setiap hari penuh main, belajar hal baru, dan mimpi-mimpi kecilmu tumbuh besar pelan-pelan.</p>
+    <p class="r msg" style="--i:4">Tetap sehat, tetap baik hati, dan <b>keep being curious</b> — dunia ini penuh hal ajaib untuk ditemukan.</p>
+    <p class="r msg" style="--i:5">Semoga hari ini penuh tawa, kue manis, dan kejutan yang bikin kamu tersenyum lebar.</p>
+  </section>
+
+  <!-- SCENE 5 — THE SECRET MESSAGE (teks rahasia ada di JS dan baru dimasukkan setelah tombol ditekan) -->
+  <section class="scene" data-s="4">
+    <div class="pre" id="pre">
+      <h2 class="r script" style="--i:0">Wait...</h2>
+      <p class="r sub" style="--i:1">there’s one more thing.</p>
+      <div class="r" style="--i:2"><button class="btn" id="secretBtn">OPEN MY SECRET MESSAGE ♡</button></div>
+    </div>
+    <div class="secret" id="secret">
+      <div id="typed"></div>
+      <button class="btn" id="replay">↺ REPLAY FROM THE START</button>
+    </div>
+  </section>
+</main>
+
+<script>
+/* =====================================================
+   KONFIGURASI — taruh file di folder yang sama dengan index.html
+   ===================================================== */
+const birthdayPhoto = "photo.webp";   // ganti ke "photo.jpg" bila memakai JPG
+const birthdayMusic = "music.mp3";    // musik instrumental romantis milikmu
+
+// Pesan rahasia (baru dimasukkan ke halaman setelah tombol ditekan)
+const SECRET = [
+  "Roufiqul Prime, kamu itu spesial. Really, truly special, persis seperti dirimu apa adanya.",
+  "Terima kasih sudah jadi kamu — dengan tawamu yang bikin orang-orang di sekitarmu ikut tersenyum.",
+  "Semoga umur 5 ini jadi tahun penuh petualangan, teman-teman baik, dan pelukan yang hangat.",
+  "Happy birthday, Roufiqul Prime. The world is lucky to have you. ♡"
+];
+
+/* =====================================================  */
+const $ = s => document.querySelector(s);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const stage = $('#stage'), scenes = [...document.querySelectorAll('.scene')], dots = [...document.querySelectorAll('#dots span')];
+let cur = 0, busy = false, started = false, secretOpen = false, typeId = 0, loadTimer = null;
+
+/* ---------- Foto (tetap utuh, tidak di-crop) ---------- */
+const photo = $('#photo');
+photo.onerror = () => $('#frame').classList.add('nophoto');
+photo.src = birthdayPhoto;
+
+/* ---------- Musik (aman bila file belum ada) ---------- */
+let audio = null, muted = false;
+try {
+  audio = new Audio(); audio.loop = true; audio.preload = 'auto'; audio.volume = .7;
+  audio.addEventListener('error', () => { audio = null; });
+  audio.src = birthdayMusic;
+} catch (e) { audio = null; }
+function playMusic() { try { if (audio && audio.paused) { const p = audio.play(); if (p && p.catch) p.catch(() => {}); } } catch (e) {} }
+$('#mute').onclick = () => {
+  muted = !muted; try { if (audio) audio.muted = muted; } catch (e) {}
+  $('#mute').textContent = muted ? '🔇' : '🔊';
+};
+
+/* ---------- Bintang berkelip + parallax ringan ---------- */
+const twBox = $('#tw');
+for (let i = 0; i < 26; i++) {
+  const d = document.createElement('i'); d.className = 'tw';
+  d.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${(Math.random()*3).toFixed(2)}s;animation-duration:${(2.6+Math.random()*2).toFixed(1)}s`;
+  twBox.appendChild(d);
+}
+let ticking = false;
+stage.addEventListener('pointermove', e => {
+  if (ticking) return; ticking = true;
+  requestAnimationFrame(() => {
+    const r = stage.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width - .5) * -16, y = ((e.clientY - r.top) / r.height - .5) * -16;
+    twBox.style.transform = `translate3d(${x}px,${y}px,0)`; ticking = false;
+  });
+});
+
+/* ---------- Partikel per scene ---------- */
+const fx = $('#fx');
+const MODES = [
+  { k: ['✦', '✧'], c: ['#fff', '#f6d6dc', '#e9c4a8'], n: 1 },                       // 0 loading
+  { k: ['♡', '♥', '✧', '✿'], c: ['#f1a7ba', '#fff', '#e0b09a'], n: 1 },              // 1 foto
+  { k: ['✦', '✧', 'conf'], c: ['#f1a7ba', '#fff', '#e0b09a', '#f7d9a8'], n: 2 },     // 2 hari spesial
+  { k: ['♡', '✿', '✧'], c: ['#f1a7ba', '#fff', '#e0b09a'], n: 1 },                   // 3 pesan
+  { k: ['✦', '✧'], c: ['#fff', '#f6d6dc'], n: 1 }                                    // 4 rahasia
+];
+const pick = a => a[Math.floor(Math.random() * a.length)];
+function spawn(m) {
+  if (fx.childElementCount > 28) return;
+  const k = pick(m.k), el = document.createElement('span');
+  el.className = 'p';
+  el.style.setProperty('--x', (4 + Math.random() * 90) + '%');
+  el.style.setProperty('--t', (9 + Math.random() * 7).toFixed(1) + 's');
+  el.style.setProperty('--dx', (Math.random() * 24 - 12).toFixed(1) + 'cqw');
+  el.style.setProperty('--r', (Math.random() * 240 - 120).toFixed(0) + 'deg');
+  el.style.setProperty('--c', pick(m.c));
+  if (k === 'conf') { el.classList.add('fall', 'conf'); el.style.setProperty('--w', (1.6 + Math.random() * 1.6).toFixed(1) + 'cqw'); }
+  else { el.textContent = k; el.style.setProperty('--s', (3 + Math.random() * 4).toFixed(1) + 'cqw'); }
+  el.addEventListener('animationend', () => el.remove());
+  fx.appendChild(el);
+}
+setInterval(() => {
+  if (document.hidden) return;
+  const m = MODES[cur]; const n = (cur === 4 && secretOpen) ? 2 : m.n;
+  for (let i = 0; i < n; i++) spawn(m);
+}, 650);
+
+/* ---------- Loading (Scene 1) ---------- */
+function runLoader() {
+  const fill = $('#barFill'), pct = $('#pct'), btn = $('#startBtn'), load = $('#load');
+  btn.classList.remove('show'); load.classList.remove('done'); fill.style.transition = 'none'; fill.style.transform = 'scaleX(0)'; pct.textContent = '0%';
+  clearInterval(loadTimer);
+  const t0 = performance.now(), dur = 3400;
+  void fill.offsetWidth; fill.style.transition = `transform ${dur}ms cubic-bezier(.4,0,.2,1)`; fill.style.transform = 'scaleX(1)';
+  loadTimer = setInterval(() => {
+    const p = Math.min(1, (performance.now() - t0) / dur);
+    pct.textContent = Math.round(p * 100) + '%';
+    if (p >= 1) { clearInterval(loadTimer); load.classList.add('done'); setTimeout(() => btn.classList.add('show'), 500); }
+  }, 80);
+}
+
+/* ---------- Navigasi ---------- */
+function update() {
+  dots.forEach((d, i) => d.classList.toggle('on', i === cur));
+  $('#back').disabled = cur <= 1;
+  $('#next').disabled = cur === 0 || cur === 4;
+}
+function countUp() {
+  const el = $('#num'); el.textContent = '0';
+  const t0 = performance.now() + 1100, dur = 1500;
+  (function step(now) {
+    if (cur !== 2) return;
+    const p = Math.max(0, Math.min(1, (now - t0) / dur));
+    el.textContent = Math.round(5 * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(step);
+  })(performance.now());
+  requestAnimationFrame(function s(n) { if (cur === 2 && $('#num').textContent !== '5') { requestAnimationFrame(s); } });
+}
+function go(n) {
+  if (busy || n === cur || n < 0 || n > 4) return;
+  busy = true;
+  scenes[cur].classList.remove('active'); cur = n; scenes[cur].classList.add('active');
+  update(); if (n === 2) { countUp(); }
+  setTimeout(() => { busy = false; }, 1100);
+}
+$('#next').onclick = () => go(cur + 1);
+$('#back').onclick = () => go(cur - 1);
+
+/* Scene 1 → 2 */
+$('#startBtn').onclick = () => {
+  if (started || busy) return;
+  started = true; playMusic(); stage.classList.add('started'); go(1);
+};
+
+/* Scene 5: pesan rahasia */
+$('#secretBtn').onclick = async () => {
+  if (secretOpen || busy) return;
+  secretOpen = true; busy = true;
+  stage.classList.add('dreamy'); $('#pre').classList.add('gone');
+  await sleep(1300); busy = false;
+  $('#secret').classList.add('show');
+  await sleep(700);
+  typeSecret();
+};
+async function typeSecret() {
+  const box = $('#typed'), id = ++typeId; box.innerHTML = '';
+  for (const line of SECRET) {
+    const p = document.createElement('p'); p.className = 'cur'; box.appendChild(p);
+    for (const ch of line) { if (id !== typeId) return; p.textContent += ch; await sleep(32); }
+    p.classList.remove('cur'); await sleep(450);
+  }
+  $('#replay').classList.add('show');
+}
+
+/* Ulangi dari awal */
+function restart() {
+  if (busy) return;
+  typeId++; secretOpen = false;
+  $('#typed').innerHTML = ''; $('#secret').classList.remove('show'); $('#replay').classList.remove('show');
+  $('#pre').classList.remove('gone'); stage.classList.remove('dreamy', 'started'); started = false;
+  go(0); runLoader();
+}
+$('#restartTop').onclick = restart;
+$('#replay').onclick = restart;
+
+/* Mulai */
+update(); scenes[0].classList.add('active'); runLoader();
+</script>
+</body>
+</html>
